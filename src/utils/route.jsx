@@ -5,6 +5,9 @@ import { Suspense, lazy } from 'react';
 const Dashboard = lazy(() => import('../components/Dashboard/Dashboard'));
 const Library = lazy(() => import('../components/Library/Library'));
 const Learn = lazy(() => import('../components/Learn/Learn'));
+const Games = lazy(() => import('../components/Games/Games'));
+const WriteIt = lazy(() => import('../components/Games/AppGames/WriteIt'));
+const CheckIt = lazy(() => import('../components/Games/AppGames/CheckIt'));
 
 export const baseRouter = createBrowserRouter([
 	{
@@ -32,6 +35,30 @@ export const baseRouter = createBrowserRouter([
 				element: (
 					<Suspense fallback={<div>Loading...</div>}>
 						<Learn />
+					</Suspense>
+				),
+			},
+			{
+				path: '/games',
+				element: (
+					<Suspense fallback={<div>Loading...</div>}>
+						<Games />
+					</Suspense>
+				),
+			},
+			{
+				path: '/game/write-it',
+				element: (
+					<Suspense fallback={<div>Loading...</div>}>
+						<WriteIt />
+					</Suspense>
+				),
+			},
+			{
+				path: '/game/check-it',
+				element: (
+					<Suspense fallback={<div>Loading...</div>}>
+						<CheckIt />
 					</Suspense>
 				),
 			},
